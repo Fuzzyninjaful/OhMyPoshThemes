@@ -1,0 +1,141 @@
+{
+    "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+    "palette": {
+      "darkText": "#000000",
+      "lightText": "#f0f0f0",
+      "purple": "#c832ff",
+      "pink": "#ff2e97",
+      "cyan": "#0ef3ff",
+      "yellow": "#ffd400"
+    },
+    "blocks": [
+      {
+        "alignment": "left",
+        "newline": true,
+        "segments": [
+          {
+            "type": "text",
+            "foreground": "p:lightText",
+            "style": "plain",
+            "template": "\u256d\u2500"
+          },
+          {
+            "type": "path",
+            "background": "p:purple",
+            "foreground": "p:darkText",
+            "properties": {
+              "folder_icon": "\uf07b ",
+              "folder_separator_icon": " \uf554 ",
+              "home_icon": " ",
+              "style": "agnoster_full",
+              "template": " \ue5ff {{ .Path }} "
+            },
+            "style": "diamond",
+            "leading_diamond": "\ue0b6",
+            "trailing_diamond": "\ue0b4"
+          }
+        ],
+        "type": "prompt"
+      },
+      {
+        "alignment": "left",
+        "type": "prompt",
+        "newline": true,
+        "segments": [
+          {
+            "type": "text",
+            "foreground": "p:lightText",
+            "style": "plain",
+            "template": "\u2502"
+          }
+        ]
+      },
+      {
+        "alignment": "right",
+        "type": "prompt",
+        "segments": [
+          {
+            "type": "git",
+            "background": "p:yellow",
+            "foreground": "p:darkText",
+            "properties": {
+              "branch_icon": "\ue725 ",
+              "fetch_stash_count": true,
+              "fetch_status": true,
+              "fetch_upstream_icon": true,
+              "fetch_worktree_count": true
+            },
+            "style": "diamond",
+            "leading_diamond": "\ue0b6",
+            "trailing_diamond": "\ue0b4",
+            "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \uf692 {{ .StashCount }}{{ end }} "
+          },
+          {
+            "type": "executiontime",
+            "background": "p:cyan",
+            "foreground": "p:darkText",
+            "properties": {
+              "style": "roundrock",
+              "threshold": 0
+            },
+            "style": "diamond",
+            "leading_diamond": "\ue0b6",
+            "trailing_diamond": "\ue0b4",
+            "template": " {{ .FormattedMs }} "
+          },
+          {
+            "type": "time",
+            "background": "p:pink",
+            "foreground": "p:darkText",
+            "properties": {
+              "time_format": "03:04 PM | Mon Jan 02"
+            },
+            "style": "diamond",
+            "leading_diamond": "\ue0b6",
+            "trailing_diamond": "\ue0b4",
+            "template": " \uf64f {{ .CurrentDate | date .Format }} \uf5ef "
+          }
+        ]
+      },
+      {
+        "alignment": "left",
+        "newline": true,
+        "segments": [
+          {
+            "foreground": "p:lightText",
+            "style": "plain",
+            "template": "\u2570\u2500",
+            "type": "text"
+          },
+          {
+            "type": "text",
+            "foreground": "p:darkText",
+            "background": "p:pink",
+            "style": "diamond",
+            "leading_diamond": "\ue0b6",
+            "trailing_diamond": "\ue0b0",
+            "template": " $ "
+          },
+          {
+            "properties": {
+              "root_icon": "\uf292 "
+            },
+            "style": "powerline",
+            "template": " \uf0e7 ",
+            "type": "root"
+          }
+        ],
+        "type": "prompt"
+      }
+    ],
+    "console_title": true,
+    "console_title_style": "template",
+    "final_space": true,
+    "console_title_template": "{{ .Folder }}",
+    "transient_prompt": {
+      "background": "transparent",
+      "foreground": "#FEF5ED",
+      "template": "\ue285 "
+    },
+    "version": 2
+  }
