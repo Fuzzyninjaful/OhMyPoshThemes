@@ -8,5 +8,5 @@ This is a theme inspired by the [VS Code 2077 theme](https://github.com/endormi/
 
 To import, add this line to your powershell prompt
 ```pwsh
-oh-my-posh init powershell --config "https://raw.githubusercontent.com/Fuzzyninjaful/OhMyPoshThemes/main/.cyberpunk.omp.json" | Invoke-Expression
+oh-my-posh init powershell --config "https://raw.githubusercontent.com/Fuzzyninjaful/OhMyPoshThemes/main/cyberpunk.omp.json" | Invoke-Expression
 ```
